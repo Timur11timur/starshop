@@ -1,3 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} My title{% endblock %}
+
+{% block body %}
 <h1>Hi from twig</h1>
 <p>We have {{ numberOfStarships }} starships</p>
 {% if numberOfStarships > 300 %}
@@ -25,3 +30,4 @@
         </tr>
     </table>
 </div>
+{% endblock %}
