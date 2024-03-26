@@ -1,0 +1,27 @@
+<h1>Hi from twig</h1>
+<p>We have {{ numberOfStarships }} starships</p>
+{% if numberOfStarships > 300 %}
+    {# Comment #}
+    <p>We have a lot of them</p>
+{% endif %}
+<div>
+    <h2>My ship</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{ myShip.name }}</td>
+        </tr>
+        <tr>
+            <th>Class</th>
+            <td>{{ myShip.class }}</td>
+        </tr>
+        <tr>
+            <th>Captain</th>
+            <td>{{ myShip.captain|upper }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ myShip.status }}</td>
+        </tr>
+    </table>
+</div>
