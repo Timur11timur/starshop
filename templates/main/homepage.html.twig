@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} My title{% endblock %}
 
 {% block body %}
-<h1>Hi from twig</h1>
+<h1 class="text-4xl">Hi from twig</h1>
 <p>We have {{ ships|length }} starships</p>
 {% if ships|length > 2 %}
     {# Comment #}
@@ -11,27 +11,35 @@
 {% endif %}
 <div>
     <h2>My ship</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <td>
-                <a href="{{ path('app_starship_show', { id: myShip.id}) }}">
-                    {{ myShip.name }}
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th>Class</th>
-            <td>{{ myShip.class }}</td>
-        </tr>
-        <tr>
-            <th>Captain</th>
-            <td>{{ myShip.captain|upper }}</td>
-        </tr>
-        <tr>
-            <th>Status</th>
-            <td>{{ myShip.status }}</td>
-        </tr>
-    </table>
+    <div class="flex">
+        {{ include('main/_shipStatusAside.html.twig') }}
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <a href="{{ path('app_starship_show', { id: myShip.id}) }}" class="text-blue-500 underline">
+                        {{ myShip.name }}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td>{{ myShip.class }}</td>
+            </tr>
+            <tr>
+                <th>Captain</th>
+                <td>{{ myShip.captain|upper }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ myShip.status }}</td>
+            </tr>
+        </table>
+    </div>
+    <h2>All ships:</h2>
+    {% for ship in ships %}
+        {{ ship.name }},
+    {% endfor %}
 </div>
 {% endblock %}
