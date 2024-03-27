@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Model\Starship;
+use App\Model\StarshipStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class StarshipRepository
@@ -21,21 +22,21 @@ class StarshipRepository
                 'CakePhp',
                 'framework',
                 'Me',
-                'loaded',
+                StarshipStatusEnum::IN_PROGRESS,
             ),
             new Starship(
                 2,
                 'WordPress',
                 'CMS',
                 'Ivan',
-                'beginning',
+                StarshipStatusEnum::COMPLETED,
             ),
             new Starship(
                 3,
                 'Symfony',
                 'framework',
                 'Eugene',
-                'finish',
+                StarshipStatusEnum::WAITING,
             ),
         ];
     }
