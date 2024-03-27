@@ -37,4 +37,14 @@ class Starship
     {
         return $this->status;
     }
+
+    public function getStatusString(): string
+    {
+        return $this->status->value;
+    }
+
+    public function getStatusImageFilename(): string
+    {
+        return 'images/' . $this->status->value;
+    }
 }
