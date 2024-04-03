@@ -9,7 +9,6 @@
 /vendor/
 ###< symfony/framework-bundle ###
 /.idea/*
-/.env
 composer.lock
 
 ###> symfony/asset-mapper ###
